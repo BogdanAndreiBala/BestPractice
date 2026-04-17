@@ -47,31 +47,7 @@
   <section *ngIf="activeTab === 'concepts'" class="concepts">
     <p *ngIf="loading$ | async" class="status">Loading NgRx concepts...</p>
 
-    <div
-      *ngFor="let topic of topics$ | async; let i = index"
-      class="topic-card"
-      [class.topic-card--expanded]="isExpanded(i)"
-    >
-      <button class="topic-trigger" type="button" (click)="toggle(i)">
-        <span class="topic-title">
-          {{ topic.title }}
-          <span class="topic-tag topic-tag--{{ topic.tag }}">{{ topic.tag }}</span>
-        </span>
-        <span class="material-icons chevron" [class.chevron--open]="isExpanded(i)"
-          >expand_more</span
-        >
-      </button>
-
-      <div *ngIf="isExpanded(i)" class="topic-body">
-        <p class="topic-description">{{ topic.description }}</p>
-
-        <ul class="key-points">
-          <li *ngFor="let point of topic.keyPoints">{{ point }}</li>
-        </ul>
-
-        <pre class="code-block"><code>{{ topic.example }}</code></pre>
-      </div>
-    </div>
+    <app-topic-card *ngFor="let topic of topics$ | async" [topic]="topic"> </app-topic-card>
   </section>
 
   <!-- ─── DATA FLOW TAB ─── -->
@@ -156,45 +132,7 @@
       spot it before revealing the answer?
     </p>
 
-    <div *ngFor="let quiz of quizzes; let i = index" class="quiz-card">
-      <p class="quiz-question">{{ quiz.question }}</p>
-      <pre class="code-block"><code>{{ quiz.codeSnippet }}</code></pre>
-
-      <div class="quiz-options">
-        <button
-          *ngFor="let option of quiz.options; let optionIndex = index"
-          class="quiz-option"
-          [class.quiz-option--selected]="selectedAnswers[i] === optionIndex"
-          [class.quiz-option--correct]="revealedQuizzes[i] && optionIndex === quiz.correctIndex"
-          [class.quiz-option--wrong]="
-            revealedQuizzes[i] &&
-            selectedAnswers[i] === optionIndex &&
-            optionIndex !== quiz.correctIndex
-          "
-          (click)="selectAnswer(i, optionIndex)"
-          type="button"
-        >
-          {{ option }}
-        </button>
-      </div>
-
-      <div *ngIf="isAnswered(i) && !revealedQuizzes[i]" class="quiz-actions">
-        <button class="reveal-btn" (click)="revealExplanation(i)" type="button">
-          Reveal explanation
-        </button>
-      </div>
-
-      <div
-        *ngIf="revealedQuizzes[i]"
-        class="quiz-explanation"
-        [class.quiz-explanation--correct]="isCorrect(i)"
-        [class.quiz-explanation--wrong]="!isCorrect(i)"
-      >
-        <strong *ngIf="isCorrect(i)">✅ Correct!</strong>
-        <strong *ngIf="!isCorrect(i)">❌ Not quite.</strong>
-        {{ quiz.explanation }}
-      </div>
-    </div>
+    <app-quiz-card *ngFor="let quiz of quizzes" [quiz]="quiz"> </app-quiz-card>
   </section>
 
   <!-- ─── ANALOGIES TAB ─── -->

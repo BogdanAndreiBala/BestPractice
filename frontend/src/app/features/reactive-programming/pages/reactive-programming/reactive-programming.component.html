@@ -1,0 +1,44 @@
+<div class="rxjs-page">
+  <header class="rxjs-hero">
+    <p class="eyebrow">Reference Guide</p>
+    <h1>RxJS Essentials</h1>
+    <p>Core concepts, operators, and best practices every Angular developer should know.</p>
+  </header>
+
+  <nav class="tab-bar">
+    <button
+      class="tab-btn"
+      [class.tab-btn--active]="activeTab === 'topics'"
+      (click)="selectTab('topics')"
+      type="button"
+    >
+      📚 Topics
+    </button>
+    <button
+      class="tab-btn"
+      [class.tab-btn--active]="activeTab === 'quiz'"
+      (click)="selectTab('quiz')"
+      type="button"
+    >
+      🐛 Spot the Bug
+    </button>
+    <button
+      class="tab-btn"
+      [class.tab-btn--active]="activeTab === 'analogies'"
+      (click)="selectTab('analogies')"
+      type="button"
+    >
+      🌍 Real-world Analogies
+    </button>
+  </nav>
+
+  <app-topic-list
+    *ngIf="activeTab === 'topics'"
+    [topics]="topics"
+    [loading]="loading"
+  ></app-topic-list>
+
+  <app-quiz-list *ngIf="activeTab === 'quiz'" [quizzes]="quizzes"></app-quiz-list>
+
+  <app-analogies-list *ngIf="activeTab === 'analogies'" [topics]="topics"></app-analogies-list>
+</div>

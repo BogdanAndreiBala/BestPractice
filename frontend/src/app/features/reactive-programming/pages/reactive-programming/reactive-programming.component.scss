@@ -1,0 +1,88 @@
+:host {
+  display: block;
+}
+
+.rxjs-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 24px 72px;
+}
+
+/* ── Hero ── */
+.rxjs-hero {
+  text-align: center;
+  padding: 40px 0 36px;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #7c3aed;
+  background: #f5f3ff;
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin: 0 0 14px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0 0 12px;
+  background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rxjs-hero p:last-child {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Tabs ── */
+.tab-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 10px 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  margin-bottom: -1px;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
+
+  &:hover {
+    color: #7c3aed;
+  }
+
+  &--active {
+    color: #7c3aed;
+    border-bottom-color: #7c3aed;
+  }
+}
+
+@media (max-width: 640px) {
+  .rxjs-page {
+    padding: 24px 16px 48px;
+  }
+  h1 {
+    font-size: 1.7rem;
+  }
+}

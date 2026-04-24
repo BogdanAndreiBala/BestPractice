@@ -1,0 +1,12 @@
+<section class="topics">
+  <p *ngIf="loading" class="status">Loading RxJS topics...</p>
+
+  <input
+    class="search-input"
+    type="text"
+    placeholder="Search topics..."
+    [formControl]="searchControl"
+  />
+
+  <app-topic-card *ngFor="let topic of filteredTopics" [topic]="topic"></app-topic-card>
+</section>

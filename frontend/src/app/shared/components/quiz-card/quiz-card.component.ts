@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RxjsQuiz } from '../../../features/reactive-programming/models/rxjs.model';
 
 @Component({
   selector: 'app-quiz-card',
@@ -9,9 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./quiz-card.component.scss'],
 })
 export class QuizCardComponent {
-  //TODO
-  //resolve any
-  @Input({ required: true }) quiz!: any;
+  @Input({ required: true }) quiz!: RxjsQuiz;
 
   selectedAnswer: number | null = null;
   isRevealed = false;

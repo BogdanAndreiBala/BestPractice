@@ -4,7 +4,9 @@ export const routes: Routes = [
   {
     path: 'practices',
     loadComponent: () =>
-      import('./dashboard/dashboard.component').then((m) => m.DashboardComponent),
+      import('./features/dashboard/components/dashboard.component').then(
+        (m) => m.DashboardComponent,
+      ),
   },
   {
     path: 'rxjs',

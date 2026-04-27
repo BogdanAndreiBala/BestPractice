@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RxjsQuiz } from '../../../features/reactive-programming/models/rxjs.model';
 
 @Component({
   selector: 'app-quiz-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './quiz-card.component.html',
   styleUrls: ['./quiz-card.component.scss'],
 })

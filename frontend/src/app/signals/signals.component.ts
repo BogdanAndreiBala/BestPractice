@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { HttpClient } from '@angular/common/http';
 import { Component, effect, signal } from '@angular/core';
 
@@ -6,7 +6,7 @@ import { Component, effect, signal } from '@angular/core';
   selector: 'app-signals',
   templateUrl: './signals.component.html',
   styleUrl: './signals.component.scss',
-  imports: [CommonModule],
+  imports: [],
 })
 export class SignalsComponent {
   private http: HttpClient;

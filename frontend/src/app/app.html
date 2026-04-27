@@ -5,15 +5,18 @@
     </button>
 
     <ul class="sidebar-nav">
-      <li
-        *ngFor="let section of sidebarSections"
-        class="sidebar-nav-item"
-        [routerLink]="['/' + section.id]"
-        routerLinkActive="sidebar-nav-item--active"
-      >
-        <span class="sidebar-icon">{{ section.icon }}</span>
-        <span *ngIf="sidebarOpen" class="sidebar-label">{{ section.label }}</span>
-      </li>
+      @for (section of sidebarSections; track section) {
+        <li
+          class="sidebar-nav-item"
+          [routerLink]="['/' + section.id]"
+          routerLinkActive="sidebar-nav-item--active"
+          >
+          <span class="sidebar-icon">{{ section.icon }}</span>
+          @if (sidebarOpen) {
+            <span class="sidebar-label">{{ section.label }}</span>
+          }
+        </li>
+      }
     </ul>
   </nav>
 

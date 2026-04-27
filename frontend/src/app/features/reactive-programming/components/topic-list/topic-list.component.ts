@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, startWith } from 'rxjs';
@@ -10,7 +10,7 @@ import { RxjsTopic } from '../../models/rxjs.model';
 @Component({
   selector: 'app-topic-list',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, TopicCardComponent],
+  imports: [ReactiveFormsModule, TopicCardComponent],
   templateUrl: './topic-list.component.html',
   styleUrls: ['./topic-list.component.scss'],
 })

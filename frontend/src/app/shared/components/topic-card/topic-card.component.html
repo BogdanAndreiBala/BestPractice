@@ -7,13 +7,15 @@
     <span class="material-icons chevron" [class.chevron--open]="isExpanded">expand_more</span>
   </button>
 
-  <div *ngIf="isExpanded" class="topic-body">
-    <p class="topic-description">{{ topic.description }}</p>
-
-    <ul class="key-points">
-      <li *ngFor="let point of topic.keyPoints">{{ point }}</li>
-    </ul>
-
-    <pre class="code-block"><code>{{ topic.example }}</code></pre>
-  </div>
+  @if (isExpanded) {
+    <div class="topic-body">
+      <p class="topic-description">{{ topic.description }}</p>
+      <ul class="key-points">
+        @for (point of topic.keyPoints; track point) {
+          <li>{{ point }}</li>
+        }
+      </ul>
+      <pre class="code-block"><code>{{ topic.example }}</code></pre>
+    </div>
+  }
 </div>

@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 import { RxjsTopic } from '../../models/rxjs.model';
 
 @Component({
   selector: 'app-analogies-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './analogies-list.component.html',
   styleUrls: ['./analogies-list.component.scss'],
 })

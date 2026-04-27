@@ -3,33 +3,41 @@
   <pre class="code-block"><code>{{ quiz.codeSnippet }}</code></pre>
 
   <div class="quiz-options">
-    <button
-      *ngFor="let option of quiz.options; let i = index"
-      class="quiz-option"
-      [class.quiz-option--selected]="selectedAnswer === i"
-      [class.quiz-option--correct]="isRevealed && i === quiz.correctIndex"
-      [class.quiz-option--wrong]="isRevealed && selectedAnswer === i && i !== quiz.correctIndex"
-      (click)="selectAnswer(i)"
-      type="button"
-    >
-      {{ option }}
-    </button>
+    @for (option of quiz.options; track option; let i = $index) {
+      <button
+        class="quiz-option"
+        [class.quiz-option--selected]="selectedAnswer === i"
+        [class.quiz-option--correct]="isRevealed && i === quiz.correctIndex"
+        [class.quiz-option--wrong]="isRevealed && selectedAnswer === i && i !== quiz.correctIndex"
+        (click)="selectAnswer(i)"
+        type="button"
+        >
+        {{ option }}
+      </button>
+    }
   </div>
 
-  <div *ngIf="selectedAnswer !== null && !isRevealed" class="quiz-actions">
-    <button class="reveal-btn" (click)="revealExplanation()" type="button">
-      Reveal explanation
-    </button>
-  </div>
+  @if (selectedAnswer !== null && !isRevealed) {
+    <div class="quiz-actions">
+      <button class="reveal-btn" (click)="revealExplanation()" type="button">
+        Reveal explanation
+      </button>
+    </div>
+  }
 
-  <div
-    *ngIf="isRevealed"
-    class="quiz-explanation"
-    [class.quiz-explanation--correct]="isCorrect"
-    [class.quiz-explanation--wrong]="!isCorrect"
-  >
-    <strong *ngIf="isCorrect">✅ Correct!</strong>
-    <strong *ngIf="!isCorrect">❌ Not quite.</strong>
-    {{ quiz.explanation }}
-  </div>
+  @if (isRevealed) {
+    <div
+      class="quiz-explanation"
+      [class.quiz-explanation--correct]="isCorrect"
+      [class.quiz-explanation--wrong]="!isCorrect"
+      >
+      @if (isCorrect) {
+        <strong>✅ Correct!</strong>
+      }
+      @if (!isCorrect) {
+        <strong>❌ Not quite.</strong>
+      }
+      {{ quiz.explanation }}
+    </div>
+  }
 </div>

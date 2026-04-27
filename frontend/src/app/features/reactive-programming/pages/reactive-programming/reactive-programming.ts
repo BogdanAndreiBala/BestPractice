@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { TopicListComponent } from '../../components/topic-list/topic-list.component';
@@ -11,7 +11,7 @@ import { environment } from '../../../../../enviroments/enviroment';
 @Component({
   selector: 'app-reactive-programming',
   standalone: true,
-  imports: [CommonModule, TopicListComponent, QuizListComponent, AnalogiesListComponent],
+  imports: [TopicListComponent, QuizListComponent, AnalogiesListComponent],
   templateUrl: './reactive-programming.component.html',
   styleUrls: ['./reactive-programming.component.scss'],
 })

@@ -4,12 +4,14 @@
     needed.
   </p>
 
-  <div *ngFor="let topic of topics" class="analogy-card">
-    <div class="analogy-card-header">
-      <span class="analogy-card-title">{{ topic.title }}</span>
-      <span class="topic-tag topic-tag--{{ topic.tag }}">{{ topic.tag }}</span>
+  @for (topic of topics; track topic) {
+    <div class="analogy-card">
+      <div class="analogy-card-header">
+        <span class="analogy-card-title">{{ topic.title }}</span>
+        <span class="topic-tag topic-tag--{{ topic.tag }}">{{ topic.tag }}</span>
+      </div>
+      <p class="analogy-card-text">{{ topic.analogy }}</p>
+      <p class="analogy-card-desc">{{ topic.description }}</p>
     </div>
-    <p class="analogy-card-text">{{ topic.analogy }}</p>
-    <p class="analogy-card-desc">{{ topic.description }}</p>
-  </div>
+  }
 </section>

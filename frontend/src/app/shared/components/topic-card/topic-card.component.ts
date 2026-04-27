@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RxjsTopic } from '../../../features/reactive-programming/models/rxjs.model';
 
 @Component({
   selector: 'app-topic-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './topic-card.component.html',
   styleUrls: ['./topic-card.component.scss'],
 })

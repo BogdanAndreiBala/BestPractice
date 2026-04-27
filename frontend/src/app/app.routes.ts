@@ -17,7 +17,7 @@ export const routes: Routes = [
   },
   {
     path: 'ngrx',
-    loadComponent: () => import('./ngrx/ngrx.component').then((m) => m.NgrxComponent),
+    loadComponent: () => import('./features/ngrx/pages/ngrx.page').then((m) => m.NgrxPage),
   },
   {
     path: 'signals',

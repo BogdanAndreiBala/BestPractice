@@ -1,0 +1,30 @@
+.topics {
+  display: grid;
+  gap: 10px;
+}
+
+.status {
+  margin: 0 0 20px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  color: #5b21b6;
+  font-size: 0.875rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #1f2937;
+  outline: none;
+  box-sizing: border-box;
+
+  &:focus {
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.2);
+  }
+}

@@ -1,0 +1,46 @@
+<div class="signals-page">
+  <header class="signals-hero">
+    <p class="eyebrow">Modern Angular</p>
+    <h1>Angular Signals</h1>
+    <p>Fine-grained reactivity without Observables — from primitives to patterns.</p>
+  </header>
+
+  <nav class="tab-bar">
+    <button
+      class="tab-btn"
+      [class.tab-btn--active]="activeTab() === 'topics'"
+      (click)="selectTab('topics')"
+      type="button"
+    >
+      📚 Topics
+    </button>
+    <button
+      class="tab-btn"
+      [class.tab-btn--active]="activeTab() === 'quiz'"
+      (click)="selectTab('quiz')"
+      type="button"
+    >
+      🐛 Spot the Bug
+    </button>
+    <button
+      class="tab-btn"
+      [class.tab-btn--active]="activeTab() === 'analogies'"
+      (click)="selectTab('analogies')"
+      type="button"
+    >
+      🌍 Real-world Analogies
+    </button>
+  </nav>
+
+  @if (activeTab() === 'topics') {
+    <app-topic-list [topics]="topics()" [loading]="isTopicsLoading()"> </app-topic-list>
+  }
+
+  @if (activeTab() === 'quiz') {
+    <app-quiz-list [quizzes]="quizzes()"></app-quiz-list>
+  }
+
+  @if (activeTab() === 'analogies') {
+    <app-analogies-list [topics]="topics()"></app-analogies-list>
+  }
+</div>

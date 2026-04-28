@@ -1,0 +1,79 @@
+.analogies-section {
+  display: grid;
+  gap: 16px;
+}
+
+.section-intro {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin: 0 0 4px;
+  line-height: 1.6;
+}
+
+.analogy-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 22px 24px;
+  display: grid;
+  gap: 10px;
+  border-left: 4px solid #c084fc;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.1);
+  }
+}
+
+.analogy-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.analogy-card-title {
+  font-size: 0.975rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.analogy-card-text {
+  font-size: 1rem;
+  color: #581c87;
+  line-height: 1.65;
+  margin: 0;
+  font-style: italic;
+}
+
+.analogy-card-desc {
+  font-size: 0.845rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.topic-tag {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 999px;
+
+  &--core {
+    background: #ede9fe;
+    color: #5b21b6;
+  }
+  &--operators {
+    background: #e0f2fe;
+    color: #0369a1;
+  }
+  &--best-practice {
+    background: #dcfce7;
+    color: #15803d;
+  }
+  &--concept {
+    background: #fef3c7;
+    color: #92400e;
+  }
+}

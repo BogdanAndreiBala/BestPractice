@@ -1,0 +1,9 @@
+<section class="quiz-section">
+  <p class="section-intro">
+    Each snippet below has a real-world Angular/RxJS bug. Can you spot it?
+  </p>
+
+  @for (quiz of quizzes; track quiz) {
+    <app-quiz-card [quiz]="quiz"></app-quiz-card>
+  }
+</section>

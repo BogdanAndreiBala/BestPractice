@@ -1,0 +1,16 @@
+<section class="topics">
+  @if (loading) {
+    <p class="status">Loading RxJS topics...</p>
+  }
+
+  <input
+    class="search-input"
+    type="text"
+    placeholder="Search topics..."
+    [formControl]="searchControl"
+    />
+
+    @for (topic of filteredTopics; track topic) {
+      <app-topic-card [topic]="topic"></app-topic-card>
+    }
+  </section>

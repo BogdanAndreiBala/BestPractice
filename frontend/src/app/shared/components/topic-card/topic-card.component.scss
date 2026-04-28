@@ -1,0 +1,124 @@
+.topic-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.topic-card:hover {
+  border-color: #99f6e4;
+  box-shadow: 0 3px 16px rgba(13, 148, 136, 0.08);
+}
+
+.topic-card--expanded {
+  border-color: #5eead4;
+  box-shadow: 0 4px 20px rgba(13, 148, 136, 0.12);
+}
+
+.topic-trigger {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: #fafafa;
+  }
+}
+
+.topic-card--expanded .topic-trigger {
+  background: #f0fdfa;
+  border-bottom: 1px solid #ccfbf1;
+}
+
+.topic-title {
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topic-tag {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 999px;
+
+  &--core {
+    background: #ccfbf1;
+    color: #0f766e;
+  }
+
+  &--concept {
+    background: #fef3c7;
+    color: #92400e;
+  }
+
+  &--best-practice {
+    background: #dcfce7;
+    color: #15803d;
+  }
+}
+
+.chevron {
+  font-size: 17px;
+  color: #9ca3af;
+  transition:
+    transform 0.22s ease,
+    color 0.22s ease;
+  flex-shrink: 0;
+
+  &--open {
+    transform: rotate(180deg);
+    color: #0d9488;
+  }
+}
+
+/* ── Topic body ── */
+.topic-body {
+  padding: 18px 20px;
+  background: #f9fffd;
+}
+
+.topic-description {
+  font-size: 0.875rem;
+  color: #374151;
+  line-height: 1.65;
+  margin: 0 0 14px;
+}
+
+.key-points {
+  margin: 0 0 16px;
+  padding-left: 18px;
+
+  li {
+    font-size: 0.845rem;
+    color: #4b5563;
+    line-height: 1.7;
+  }
+}
+
+/* ── Section intro ── */
+.section-intro {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin: 0 0 20px;
+  line-height: 1.6;
+
+  strong {
+    color: #0f766e;
+  }
+}

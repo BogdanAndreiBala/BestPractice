@@ -1,0 +1,21 @@
+<div class="topic-card" [class.topic-card--expanded]="isExpanded">
+  <button class="topic-trigger" type="button" (click)="toggle()">
+    <span class="topic-title">
+      {{ topic.title }}
+      <span class="topic-tag topic-tag--{{ topic.tag }}">{{ topic.tag }}</span>
+    </span>
+    <span class="material-icons chevron" [class.chevron--open]="isExpanded">expand_more</span>
+  </button>
+
+  @if (isExpanded) {
+    <div class="topic-body">
+      <p class="topic-description">{{ topic.description }}</p>
+      <ul class="key-points">
+        @for (point of topic.keyPoints; track point) {
+          <li>{{ point }}</li>
+        }
+      </ul>
+      <pre class="code-block"><code>{{ topic.example }}</code></pre>
+    </div>
+  }
+</div>

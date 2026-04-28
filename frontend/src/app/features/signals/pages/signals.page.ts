@@ -1,6 +1,6 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { toSignal } from '@angular/core/rxjs-interop'; // <-- Import toSignal!
+import { toSignal } from '@angular/core/rxjs-interop';
 
 import { SignalsService } from '../services/signals.service';
 import { SignalsTopic, SignalsQuiz } from '../models/signals.model';

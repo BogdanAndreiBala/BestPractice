@@ -12,11 +12,8 @@
 }
 
 <section class="accordion">
-  @for (category of categories; track category) {
-    <article
-      class="accordion-item"
-      [class.accordion-item--open]="isOpen(category.slug)"
-      >
+  @for (category of categories; track category.slug) {
+    <article class="accordion-item" [class.accordion-item--open]="isOpen(category.slug)">
       <button class="accordion-trigger" type="button" (click)="toggleCategory(category.slug)">
         <span>
           <strong>{{ category.title }}</strong>
@@ -30,13 +27,11 @@
       @if (isOpen(category.slug)) {
         <div class="accordion-panel">
           @if (!getDetails(category.slug)) {
-            <p class="status">
-              Loading {{ category.title }} details...
-            </p>
+            <p class="status">Loading {{ category.title }} details...</p>
           }
           @if (getDetails(category.slug); as details) {
             <ul class="practice-list">
-              @for (item of details.items; track item) {
+              @for (item of details.items; track item.title) {
                 <li class="practice-card">
                   <h3>{{ item.title }}</h3>
                   <p>{{ item.summary }}</p>

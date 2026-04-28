@@ -1,6 +1,5 @@
-
 import { Component, Input } from '@angular/core';
-import { RxjsTopic } from '../../models/rxjs.model';
+import { RxjsTopic } from '../../../features/reactive-programming/models/rxjs.model';
 
 @Component({
   selector: 'app-analogies-list',

@@ -1,11 +1,10 @@
-
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, startWith } from 'rxjs';
-import { TopicCardComponent } from '../../../../shared/components/topic-card/topic-card.component';
+import { TopicCardComponent } from '../topic-card/topic-card.component';
 import { DestroyRef, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { RxjsTopic } from '../../models/rxjs.model';
+import { RxjsTopic } from '../../../features/reactive-programming/models/rxjs.model';
 
 @Component({
   selector: 'app-topic-list',

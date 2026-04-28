@@ -21,7 +21,7 @@ export const routes: Routes = [
   },
   {
     path: 'signals',
-    loadComponent: () => import('./signals/signals.component').then((m) => m.SignalsComponent),
+    loadComponent: () => import('./features/signals/pages/signals.page').then((m) => m.SignalsPage),
   },
   { path: '', redirectTo: 'practices', pathMatch: 'full' },
   { path: '**', redirectTo: 'practices' },
